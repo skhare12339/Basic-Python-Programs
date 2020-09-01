@@ -1,0 +1,44 @@
+from IPython.display import clear_output
+my_list=['0','1','2']
+
+def disp(my_list):
+    print('This is the current list\n')
+    print(my_list)
+def imp():
+    z=input("Enter the place you want to change: ")
+    while z not in ['0','1','2']:
+        z=input("Sorry! wrong choice, enter again: ")
+        if z not in ['0','1','2']:
+            print("Wrong Choice")
+    return int(z)
+
+def rep(my_list,pos):
+    z=input("Enter the string you want to replace with: ")
+    my_list[pos]=z
+    return my_list
+#off_on logic
+def on_off():
+    l=['y','n','Y','N']
+    z=input("Press Y to continue playing and N to stop: ") 
+    while z not in l:
+        z=input('Sorry!Enter again')
+        if z not in l:
+            print("Wrong Choice")
+    if z=='y' or z=='Y':
+        return True
+    else:
+        print("Exit")
+        return False
+    
+#Now at the ime of function call
+on=True
+my_list=[0,1,2]
+while on:
+    clear_output()
+    disp(my_list)
+    Input=imp()
+    Replace=rep(my_list,Input)
+    clear_output()
+    disp(Replace)
+    on=on_off()
+    
